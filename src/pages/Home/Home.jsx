@@ -6,6 +6,7 @@ import hero_banner from '../../assets/hero_banner.jpg'
 import hero_title from '../../assets/hero_title.png'
 import info_ion from '../../assets/info_icon.png'
 import play_ion from '../../assets/play_icon.png'
+import Footer from '../../components/Footer/Footer'
 
 
 function Home() {
@@ -21,10 +22,16 @@ function Home() {
             <button> <img src={play_ion} alt="" className='btn hero-play-btn' />Play</button>
             <button> <img src={info_ion} alt="" className='btn hero-info-btn dark-btn' />More info</button>
           </div>
+          <TitleCards />
         </div>
       </div>
-
-      <TitleCards />
+      <div className="more_cards">
+        <TitleCards title={"Blockbuster"} />
+        <TitleCards title={"xyz"} />
+        <TitleCards title={"Some other buster"} />
+        <TitleCards title={"One more buster"} />
+      </div>
+      <Footer />
     </div>
   )
 }

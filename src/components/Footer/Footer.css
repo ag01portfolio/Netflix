@@ -1,0 +1,25 @@
+.footer {
+  padding: 30px, 40px, 30px, 40px;
+}
+
+.footer .footer-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer .footer-icons img {
+  width: 20px;
+}
+.footer-text-list {
+  padding: 30px, 40px, 30px, 40px;
+}
+
+.footer-text-list ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 40px;
+  margin-bottom: 30px;
+}
