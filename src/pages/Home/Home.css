@@ -33,11 +33,23 @@
   margin-bottom: 50px;
 }
 
-.hero-button .btn img {
+/* .hero-button .btn img {
   width: 25px;
+} */
+
+.hero-play-btn {
+  width: 25px;
+  height: 25px;
+  z-index: 1;
 }
 
-.hero-btns .btn {
+.hero-info-btn {
+  width: 25px;
+  height: 25px;
+  z-index: 1;
+}
+
+.hero-button .btn {
   border: 0;
   outline: 0;
   padding: 8px 20px;
@@ -51,15 +63,15 @@
   cursor: pointer;
 }
 
-.hero-btns .btn.dark-btn {
+.hero-button .btn.dark-btn {
   color: white;
   background: #6d6d6eb3;
 }
 
-.hero-btns .btn:hover {
+.hero-button .btn:hover {
   background: #ffffffbf;
 }
 
-.hero-btns .btn.dark-btn:hover {
+.hero-button .btn.dark-btn:hover {
   background: #6d6d6eb3;
 }

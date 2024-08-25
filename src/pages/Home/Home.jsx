@@ -18,8 +18,8 @@ function Home() {
           <img src={hero_title} alt="" className='caption-image' />
           <p>sdfsdfsfdfsdf sdffsd dsdffsdf sdf sd sdf sdf sdfdd</p>
           <div className="hero-button">
-            <button> <img src={play_ion} alt="" className='btn' />Play</button>
-            <button> <img src={info_ion} alt="" className='btn dark-btn' />img</button>
+            <button> <img src={play_ion} alt="" className='btn hero-play-btn' />Play</button>
+            <button> <img src={info_ion} alt="" className='btn hero-info-btn dark-btn' />More info</button>
           </div>
         </div>
       </div>
