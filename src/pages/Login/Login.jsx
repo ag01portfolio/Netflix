@@ -15,8 +15,7 @@ function Login() {
           <input type='text' className='sign-up-name' placeholder='Your name' />
           <div className="form-help">
             <div className='rember-mef'>
-              <input type="checkbox" />
-              <label htmlFor=''>Remember me</label>
+
             </div>
             <p>Need Help</p>
 
