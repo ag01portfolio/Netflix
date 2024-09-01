@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './TitleCards.css'
 import card_data from '../../assets/cards/Cards_data'
 
 function TitleCards({ title, category }) {
-    // let tileTitle = title ? title : "Top on Netflix"
-    const tileTitle = title ? title : "Top on Netflix";
+    // let getTile = title ? title : "Top on Netflix"
+    const [apiData, setApiData] = useState([])
+    const getTile = title ? title : "Top on Netflix";
+    // const getCategory = category ? category : "now_playing"
 
     const options = {
         method: 'GET',
@@ -14,20 +16,24 @@ function TitleCards({ title, category }) {
         }
     };
 
-    fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options)
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
+    useEffect(() => {
+        fetch(`https://api.themoviedb.org/3/movie/${category ? category : "now_playing"}?language=en-US&page=1?include_adult=true`, options)
+            .then(response => response.json())
+            // .then(response => console.log("===>>", response))
+            .then(response => setApiData(response?.results))
+            .catch(err => console.error(err));
 
+    }, [])
 
     return (
         <div className="title-card">
-            <h2>{tileTitle}</h2>
+            <h2>{getTile}</h2>
             <div className="card-list">
-                {card_data.map((card, index) => {
+                {apiData.map((card, index) => {
+                    // console.log("======>> API data insede map apiData", apiData)
                     return <div className="card" key={index}>
-                        <img src={card.image} alt="card_image" />
-                        {/* <p>{card.name}</p> */}
+                        <img src={`https://image.tmdb.org/t/p/w500/` + card.backdrop_path} alt="card_image" />
+                        <p>{card.original_title}</p>
                     </div>
                 })}
             </div>
