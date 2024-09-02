@@ -3,10 +3,8 @@ import './TitleCards.css'
 import card_data from '../../assets/cards/Cards_data'
 
 function TitleCards({ title, category }) {
-    // let getTile = title ? title : "Top on Netflix"
     const [apiData, setApiData] = useState([])
     const getTile = title ? title : "Top on Netflix";
-    // const getCategory = category ? category : "now_playing"
 
     const options = {
         method: 'GET',
