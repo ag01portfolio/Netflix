@@ -18,8 +18,6 @@ const Player = () => {
         <p>Name</p>
         <p>Type</p>
       </div>
-
-
     </div>
   )
 }
