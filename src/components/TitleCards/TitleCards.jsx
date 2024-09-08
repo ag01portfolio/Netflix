@@ -4,6 +4,8 @@ import card_data from '../../assets/cards/Cards_data'
 
 function TitleCards({ title, category }) {
     const [apiData, setApiData] = useState([])
+    const [movieName, setMovieName] = useState('');
+
     const getTile = title ? title : "Top on Netflix";
 
     const options = {
@@ -14,6 +16,15 @@ function TitleCards({ title, category }) {
         }
     };
 
+
+    const handleSearch = (movieName) => {
+        console.log('=======>> handleSearch Abi')
+        const encodedMovieName = encodeURIComponent(movieName);
+        // const googleSearchUrl = `https://www.google.com/search?q=${movieName}`;
+        const youtubeSearchUrl = `https://www.youtube.com/results?search_query=${encodedMovieName}+trailer`;
+        // const googleSearchUrl = `https://www.google.com/search?q=${encodedMovieName}`;
+        window.open(youtubeSearchUrl, '_blank');
+    };
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/movie/${category ? category : "now_playing"}?language=en-US&page=1?include_adult=true`, options)
             .then(response => response.json())
@@ -30,8 +41,14 @@ function TitleCards({ title, category }) {
                 {apiData.map((card, index) => {
                     // console.log("======>> API data insede map apiData", apiData)
                     return <div className="card" key={index}>
-                        <img src={`https://image.tmdb.org/t/p/w500/` + card.backdrop_path} alt="card_image" />
+                        <img src={`https://image.tmdb.org/t/p/w500/` + card.backdrop_path} alt="card_image"
+                            onClick={() => {
+                                handleSearch(card.original_title)
+                                console.log("--- click")
+                            }}
+                        />
                         <p>{card.original_title}</p>
+
                     </div>
                 })}
             </div>
