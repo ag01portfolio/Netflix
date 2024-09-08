@@ -20,7 +20,7 @@ const Player = () => {
   };
 
   useEffect(() => {
-    fetch('https://api.themoviedb.org/3/movie/1022789/videos?language=en-US', options)
+    fetch(`https://api.themoviedb.org/3/movie/${apiData.id}/videos?language=en-US`, options)
       .then(response => response.json())
       .then(response => console.log("===> Player API data", response))
       // .then(response => setApiData(response.results[0]))
