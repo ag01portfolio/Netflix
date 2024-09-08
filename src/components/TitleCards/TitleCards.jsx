@@ -19,12 +19,12 @@ function TitleCards({ title, category }) {
 
     const handleSearch = (movieName) => {
         console.log('=======>> handleSearch Abi')
-        const encodedMovieName = encodeURIComponent(movieName);
         // const googleSearchUrl = `https://www.google.com/search?q=${movieName}`;
-        const youtubeSearchUrl = `https://www.youtube.com/results?search_query=${encodedMovieName}+trailer`;
-        // const googleSearchUrl = `https://www.google.com/search?q=${encodedMovieName}`;
+        // const youtubeSearchUrl = `https://www.youtube.com/results?search_query=${movieName}+trailer`;
+        const youtubeSearchUrl = `https://www.youtube.com/results?search_query=${movieName}+movie`;
         window.open(youtubeSearchUrl, '_blank');
-    };
+    }
+
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/movie/${category ? category : "now_playing"}?language=en-US&page=1?include_adult=true`, options)
             .then(response => response.json())
