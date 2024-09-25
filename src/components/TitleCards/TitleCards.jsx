@@ -21,7 +21,12 @@ function TitleCards({ title, category }) {
         console.log('=======>> handleSearch Abi')
         // const googleSearchUrl = `https://www.google.com/search?q=${movieName}`;
         // const youtubeSearchUrl = `https://www.youtube.com/results?search_query=${movieName}+trailer`;
-        const youtubeSearchUrl = `https://www.youtube.com/results?search_query=${movieName}+movie`;
+        // const youtubeSearchUrl = `https://www.youtube.com/results?search_query=${movieName}+movie`;  // not working
+        // const youtubeSearchUrl = ` https://www.mxplayer.in/movies?search=true&q=${movieName}`; // working
+        // const youtubeSearchUrl = ` https://www.zee5.com/search?q=${movieName}`; // second best working
+        // const youtubeSearchUrl = `https://tubitv.com/search/${movieName}`; // working ****
+        const youtubeSearchUrl = ` https://fmovies-on.me/?s=${movieName}`; // the best one working
+
         window.open(youtubeSearchUrl, '_blank');
     }
 

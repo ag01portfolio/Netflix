@@ -26,6 +26,7 @@ function Home() {
         </div>
       </div>
       <div className="more_cards">
+        <TitleCards title={'Suraj Buster Tull Hada'} category={"top_rated"} />
         <TitleCards title={"Blockbuster"} category={"top_rated"} />
         <TitleCards title={"Popular"} category={"popular"} />
         <TitleCards title={"Some other buster"} category={"now_playing"} />
