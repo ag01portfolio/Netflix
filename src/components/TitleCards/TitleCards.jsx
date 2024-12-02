@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './TitleCards.css'
 import card_data from '../../assets/cards/Cards_data'
+// import abhi from '../../abhi.js'
 
 function TitleCards({ title, category }) {
     const [apiData, setApiData] = useState([])
@@ -12,7 +13,7 @@ function TitleCards({ title, category }) {
         method: 'GET',
         headers: {
             accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYTJmNTRlMDVmNDJiNDQ2ODZmOGM1ZDRjNGM2MzI3OSIsIm5iZiI6MTcyNTExMDIzNy43NDQ1MTksInN1YiI6IjY2ZDE0MTFiYjc0ZjAzZDE4ZTcwNmFiMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VvPNwsGuY1nB6OIK-xcCwpyxc3BAHqSEA6cWcSJCSBg'
+            Authorization: abhi.movieToken
         }
     };
 
